@@ -12,7 +12,7 @@ define([
 	  'jQuery'
 	, 'Underscore'
 	, 'Backbone'
-	, '_/js/views/loaderView'
+	, 'vgHear/js/views/loaderView'
 
 ], function($, _, Backbone, ldrView){
 

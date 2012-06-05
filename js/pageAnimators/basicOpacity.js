@@ -42,13 +42,13 @@ define([
 		var that = this;
 
 
-		this.transitionIn = function(){
+		this.transitionIn = function(options){
 			$(target).animate({"opacity": 1}, duration, function(){
 				that.trigger("transitionInDone");
 			});	
 		};
 
-		this.transitionOut = function(){
+		this.transitionOut = function(options){
 			$(target).animate({"opacity": 0}, duration, function(){
 				that.trigger("transitionOutDone");
 			});

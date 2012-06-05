@@ -82,7 +82,7 @@ define([
 
 					// transition in and kill animator
 					animator.on("transitionInDone", function(){this.kill();});
-					animator.transitionIn();
+					animator.transitionIn(options);
 					
 					// trigger an vent at the end o the transitions
 					this.trigger("transitionsDone");
@@ -91,7 +91,7 @@ define([
 			
 				// transitionOut
 				animator.on("transitionOutDone", transitionIn, this);
-				animator.transitionOut(transitionIn);
+				animator.transitionOut(options);
 			}
 		}
 

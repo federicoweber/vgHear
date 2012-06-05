@@ -19,18 +19,18 @@ In order to make it work the following libs are needed:
 ## Folder & Files structure
 The files are organized with the following structure:
 On the root level you will find: 
-* _/ *that contain the main framework (Check out from [here](https://vangogh.beanstalkapp.com/vghtml5boilerplate/browse/trunk/_))* 
+* vgHear/ *that contain the main framework (Check out from [here](https://vangogh.beanstalkapp.com/vghtml5boilerplate/browse/trunk/_))* 
 * app/ for the files specifically developed for the app.
 * .htaccess
 * index.html
 * 404.html
 
-### _/js/main.js
+### vgHear/js/main.js
 This is the files used to bootstrap the framework.
 All the main dependecies for the app are declared in here.
 
 ### modules boilerplate
-Usually the modules you are going to develop will have the structure highlited in **_/js/boilerplate.js**
+Usually the modules you are going to develop will have the structure highlited in **vgHear/js/boilerplate.js**
 
 ### app/js/app.js
 This is the entry point of the app. It should **return an init()** function that is automatically executed by the **main.js**.
@@ -42,3 +42,9 @@ This is our router.
 This file contain a base project to get you up and running in seconds.
 
 To setup a new project just decompress the boilerplate and copy the **_** folder in it.
+
+## Build
+The building function is using require js optimizer.
+To use it you need [Node.js](nodejs.org) installed on your machine, and then run the following command.
+
+	 $ r.js -o AppRootFolderPath/vgHear/app.build.js

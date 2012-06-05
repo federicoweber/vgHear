@@ -1,4 +1,4 @@
-define(['order!_/js/libs/backbone/backbone'], function(){
+define(['order!vgHear/js/libs/backbone/backbone'], function(){
   // Now that all the orignal source codes have ran and accessed each other
   // We can call noConflict() to remove them from the global name space
   // Require.js will keep a reference to them so we can use them in our modules

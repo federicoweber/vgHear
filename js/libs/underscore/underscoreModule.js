@@ -1,4 +1,4 @@
-define(['order!_/js/libs/underscore/underscore'], function(){
+define(['order!vgHear/js/libs/underscore/underscore'], function(){
   // Tell Require.js that this module returns  a reference to Underscore
   return _;
 });

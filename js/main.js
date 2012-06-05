@@ -12,13 +12,13 @@
 require.config({
   paths: {
     //libraries aliases
-    jQuery: '_/js/libs/jquery/jqueryModule'
-    , Easing: '_/js/libs/jquery/jqueryEasingModule'
-    , Underscore: '_/js/libs/underscore/underscoreModule'
-    , Backbone: '_/js/libs/backbone/backboneModule'
+    jQuery: 'vgHear/js/libs/jquery/jqueryModule'
+    , Easing: 'vgHear/js/libs/jquery/jqueryEasingModule'
+    , Underscore: 'vgHear/js/libs/underscore/underscoreModule'
+    , Backbone: 'vgHear/js/libs/backbone/backboneModule'
     //require js plugin aliases
-    , order: '_/js/libs/requirejs-plugins/order'
-    , text: '_/js/libs/requirejs-plugins/text'
+    , order: 'vgHear/js/libs/requirejs-plugins/order'
+    , text: 'vgHear/js/libs/requirejs-plugins/text'
 
   }
   , baseUrl: ''
@@ -28,11 +28,11 @@ require.config({
 require([
   'app/js/app'
   // Some plugins have to be loaded in order due to there non AMD compliance
-  , 'order!_/js/libs/json2/json2'
-  , 'order!_/js/libs/jquery/jquery-1.7.1.min'
-  , 'order!_/js/libs/jquery/jquery.easing.1.3'
-  , 'order!_/js/libs/underscore/underscore'
-  , 'order!_/js/libs/backbone/backbone'
+  , 'order!vgHear/js/libs/json2/json2'
+  , 'order!vgHear/js/libs/jquery/jquery-1.7.1.min'
+  , 'order!vgHear/js/libs/jquery/jquery.easing.1.3'
+  , 'order!vgHear/js/libs/underscore/underscore'
+  , 'order!vgHear/js/libs/backbone/backbone'
 
 ], function(App){
   App.init();
