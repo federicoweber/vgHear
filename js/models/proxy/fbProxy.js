@@ -156,9 +156,25 @@ define([
 
 	// this is used to post a message to the user wall
 	// for the list of possible data to send see https://developers.facebook.com/docs/reference/dialogs/feed/#graphapicall
-	,	postToWall: function(callback, options){
+	,	directPostToWall: function(callback, options){
 			if(options.data){
 				FB.api('/me/feed', 'post', options.data, function(response) {
+					if (!response || response.error) {
+						callback(response.error);
+					} else {
+						callback(null, options);
+					}
+				});
+			} else {
+				callback("missing_data")
+			}
+		}
+
+	// this is used to post a message to the user wall with prompt
+	,	postToWall: function(callback, options){
+			if(options.data){
+				options.data.method = 'feed';
+				FB.ui(options.data, function(response) {
 					if (!response || response.error) {
 						callback(response.error);
 					} else {
