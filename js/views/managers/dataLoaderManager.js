@@ -43,6 +43,29 @@ define([
 		});
 	};
 
+	//This is a convenience function to preload images
+	dataLoaderManager.preloadAssets = function(target, options, next){;
+		if(options.assets){
+
+			var totalNum = options.assets.length
+			,	numLoaded = 0
+			,	onLoad = function(){
+				numLoaded +=1 ;
+				if(numLoaded === totalNum){
+					next();
+				};
+			}
+			;
+			_.each(options.assets,function(url){
+				var img = new Image()
+				img.onLoad = onLoad();
+				img.src = url;
+			});
+		} else {
+			next();
+		}
+	};
+
 	return dataLoaderManager;
 });
 	
