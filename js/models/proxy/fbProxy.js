@@ -93,7 +93,7 @@ define([
 					});
 
 					FB.getLoginStatus(function(res) {
-						console.log("get login status")
+						// console.log("get login status")
 						if (res.status === 'connected') {
 
 							//cache the user data
@@ -137,7 +137,7 @@ define([
 			var options = options ? options : {}
 			FB.login(function(res) {
 				if (res.authResponse) {
-					console.log('Welcome!  Fetching your information.... ');
+					// console.log('Welcome!  Fetching your information.... ');
 					fbProxy.getUserData(callback, {
 							"status": "connected"
 						,	"user":{
@@ -185,7 +185,24 @@ define([
 				callback("missing_data")
 			}
 		}
-	};
+		// resize canvas { width: 640, height: 480 }
+	,	resizeCanvas: function(newSize){
+			FB.Canvas.setSize(newSize);
+		}
 
+	,	getCanvasSize: function(callback){
+			FB.Canvas.getPageInfo(
+			    function(info) {
+			    	var size = {"width": info.clientWidth, "height": info.clientHeight}
+			    	if(callback){
+				        callback(size)
+			    	}
+			        return size; 
+			    }
+			);
+	}
+	}
+
+	;
 	return fbProxy;
 });
