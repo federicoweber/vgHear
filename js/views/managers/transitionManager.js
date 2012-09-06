@@ -76,17 +76,21 @@ define([
 				}
 				
 				var transitionIn = function(){
+					var that = this;
 					//	callback before transition in
 					this.model.set({"currentPage": _.indexOf(this.model.get("pages"),page)});
 					page[callback](options);
 
 					// transition in and kill animator
-					animator.on("transitionInDone", function(){this.kill();});
+					animator.on("transitionInDone", function(){
+						this.kill();
+
+						// trigger an vent at the end o the transitions
+						that.trigger("transitionsDone");
+						next();
+					});
 					animator.transitionIn(options);
 					
-					// trigger an vent at the end o the transitions
-					this.trigger("transitionsDone");
-					next();
 				};
 			
 				// transitionOut
