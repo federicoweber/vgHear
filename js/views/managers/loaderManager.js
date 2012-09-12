@@ -29,11 +29,11 @@ define([
 		};
 	
 		this.show = function() {
-			if(view) $(view.el).animate({opacity:1});
+			if(view) $(view.el).animate({opacity:1}).removeClass('hide').addClass('show');
 		};
 
 		this.hide = function() {
-			if(view) $(view.el).animate({opacity:0});
+			if(view) $(view.el).animate({opacity:0}).removeClass('show').addClass('hide');
 		};
 
 		this.remove = function() {
